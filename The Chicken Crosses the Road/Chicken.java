@@ -72,9 +72,6 @@ public class Chicken {
         ArrayList<Location> list=new ArrayList<Location>();
         boolean[][] visited=new boolean[Road.MAX_Y_COORDINATE][Road.MAX_X_COORDINATE];
         int start= road.getStartCoordinate(); // Gets the starting position for the chicken.
-        //TODO: EDGE CASE - Chicken might get instantiated at a coordinate from which 
-        //goal is unreachable, however, there might be other starting positions that
-        //chicken can take to reach the goal.
         road.printRoad();
         pathFind(start,0,list,visited);
         System.out.format("Answer: Total valid paths from starting point (%d,%d) is %d.",0,start,count);
