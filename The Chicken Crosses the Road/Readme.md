@@ -50,7 +50,7 @@ Solution is programmed in Java. There are three main classes: Location, Road, Ch
     The state of the road is stored in a 2D char array(potholes[MAX_Y_WIDTH][MAX_X_WIDTH])
     The road generated might not have a valid path to reach the goal. The starting position might also be 
     generated from which the goal might be unreachable.
-    Road Format: 
+    Road Format:  
     |(0,0), (1,0), (2,0), (3,0)|  
     |(0,1), (1,1), (2,1), (3,1)|  
     |(0,2), (1,2), (2,2), (3,2)|  
@@ -68,30 +68,29 @@ Solution is programmed in Java. There are three main classes: Location, Road, Ch
     another path. 
     
     ---------------------------------------------------------------------------------------------------------------------------------
-    
 Sample outputs:
 (* Marks the starting Coordinates)
 
-1)
-O X X O  
-X X O O  
-O O X X  
-O* X X X   
+1) 
+   O X X O  
+   X X O O  
+   O O X X  
+   O* X X X
 Answer: Total valid paths from starting point (0,3) is 0.  
 
 2)
-O O X X  
-O X O O  
-X X O X  
-O* O O X  
-1. (0, 3)->(1, 3)->(2, 3)->(2, 2)->(2, 1)->(3, 1).  
+   O O X X  
+   O X O O  
+   X X O X  
+   O* O O X
+1. (0, 3)->(1, 3)->(2, 3)->(2, 2)->(2, 1)->(3, 1).
 Answer: Total valid paths from starting point (0,3) is 1.  
 
 3)
-X O X O   
-O O O O  
-O* O O O  
-O O O O  
+   X O X O   
+   O O O O  
+   O* O O O  
+   O O O O
 1. (0, 2)->(1, 2)->(2, 2)->(3, 2).  
 2. (0, 2)->(1, 2)->(2, 2)->(2, 1)->(3, 1).  
 3. (0, 2)->(1, 2)->(2, 2)->(2, 3)->(3, 3).  
@@ -122,10 +121,10 @@ O O O O
 Answer: Total valid paths from starting point (0,2) is 27.  
 
 4)
-O X O X  
-X X X X  
-O* O O O  
-O O O O  
+   O X O X  
+   X X X X  
+   O* O O O  
+   O O O O
 1. (0, 2)->(1, 2)->(2, 2)->(3, 2). 
 2. (0, 2)->(1, 2)->(2, 2)->(2, 3)->(3, 3). 
 3. (0, 2)->(1, 2)->(1, 3)->(2, 3)->(3, 3). 
@@ -137,10 +136,10 @@ O O O O
 Answer: Total valid paths from starting point (0,2) is 8. 
     
 5)
-O O O O  
-O* X O O  
-X O O X  
-O O O O  
+   O O O O  
+   O* X O O  
+   X O O X  
+   O O O O
 1. (0, 1)->(0, 0)->(1, 0)->(2, 0)->(3, 0).  
 2. (0, 1)->(0, 0)->(1, 0)->(2, 0)->(2, 1)->(3, 1).  
 3. (0, 1)->(0, 0)->(1, 0)->(2, 0)->(2, 1)->(2, 2)->(2, 3)->(3, 3).  
