@@ -83,7 +83,7 @@ Answer: Total valid paths from starting point (0,3) is 0.
    O X O O  
    X X O X  
    O* O O X
-1. (0, 3)->(1, 3)->(2, 3)->(2, 2)->(2, 1)->(3, 1).
+1. (0, 3)->(1, 3)->(2, 3)->(2, 2)->(2, 1)->(3, 1).  
 Answer: Total valid paths from starting point (0,3) is 1.  
 
 3)
@@ -132,7 +132,7 @@ Answer: Total valid paths from starting point (0,2) is 27.
 5. (0, 2)->(0, 3)->(1, 3)->(2, 3)->(3, 3). 
 6. (0, 2)->(0, 3)->(1, 3)->(2, 3)->(2, 2)->(3, 2). 
 7. (0, 2)->(0, 3)->(1, 3)->(1, 2)->(2, 2)->(3, 2). 
-8. (0, 2)->(0, 3)->(1, 3)->(1, 2)->(2, 2)->(2, 3)->(3, 3). 
+8. (0, 2)->(0, 3)->(1, 3)->(1, 2)->(2, 2)->(2, 3)->(3, 3).   
 Answer: Total valid paths from starting point (0,2) is 8. 
     
 5)
