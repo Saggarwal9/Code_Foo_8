@@ -16,10 +16,10 @@ Henny might not be able to reach the other side (no ticket refunds)
 Solve for at least one randomly generated starting point, you do not need to solve for all starting positions
 Display AT LEAST the grid, the valid paths, and the final answer.
 Example where O denotes a coordinate and X denotes a pothole:
-O X O X
-O O X O
-X O O O
-O O O O
+O X O X 
+O O X O 
+X O O O 
+O O O O 
 Valid paths Henny can take if starting at (0, 3):
 (0, 3) -> (0, 2) -> (1, 2) -> (1, 1) -> (2, 1) -> (3, 1)
 (0, 3) -> (0, 2) -> (1, 2) -> (1, 1) -> (1, 0) -> (2, 0) -> (3, 0)
