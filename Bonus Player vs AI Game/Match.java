@@ -9,7 +9,7 @@ import java.util.Set;
 
 public class Match {
     /** time limit each player has to decide on a move (default: 10 secs) **/
-    private final static int THINK_TIME = 10;
+    private final static int THINK_TIME = 30; //30 seconds to make a move
 
     private Player player1, player2;
     private int player1score, player2score;
