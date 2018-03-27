@@ -74,7 +74,7 @@ public class Chicken {
         int start= road.getStartCoordinate(); // Gets the starting position for the chicken.
         road.printRoad();
         pathFind(start,0,list,visited);
-        System.out.format("Answer: Total valid paths from starting point (%d,%d) is %d.",0,start,count);
+        System.out.format("Answer: Total valid paths from starting point (%d,%d) is %d.\n",0,start,count);
     }
 
 }
