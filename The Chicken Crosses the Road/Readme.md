@@ -1,4 +1,4 @@
-Prompt : THE CHICKEN CROSSES THE ROAD
+# Prompt : THE CHICKEN CROSSES THE ROAD  
 Henny Penny, the chicken, wants to cross the road to go see his favorite historical documentary, Chicken Little. Although, the road often has potholes created by falling sky pieces. Chicken City doesn’t have enough corn in the budget to fix all the potholes, so Henny needs to be careful not to trip when crossing.
 
 Create a program that will count how many paths Henny can take to cross the road with these rules:
@@ -35,6 +35,8 @@ Answer: Total valid paths from starting point (0, 3) is 4
 Explain how you implemented the solution. Does your solution work with larger grids?
 -------------------------------------------------------------------------------------------------------------------------------------
 
+Answer: Yes, it works with larger grid.  
+
 Approach: 
 
 Solution is programmed in Java. There are three main classes: Location, Road, Chicken.
@@ -67,15 +69,20 @@ Solution is programmed in Java. There are three main classes: Location, Road, Ch
     When we reach end of recursive function, mark the current node unvisited to allow chicken to access that coordinate while following
     another path. 
     
-    ---------------------------------------------------------------------------------------------------------------------------------
-Sample outputs:
-(* Marks the starting Coordinates)
+# Running the Program
+Chicken is the main class.   
+Requires no arguments to run.  
+On an IDE, can be compiled directly by building and executing chicken.java.   
+To compile on a shell, navigate to the base folder. Compile using 'javac \*.java' without quotes, followed by java chicken.   
+To change the grid-size, alter the MAX_Y_WIDTH (Length of the Grid) or MAX_X_WIDTH (Width of the Grid) in the Road class.  
+    
+# Sample outputs: (* Marks the starting Coordinates)
 
 1) 
    O X X O  
    X X O O  
    O O X X  
-   O* X X X
+   O* X X X  
 Answer: Total valid paths from starting point (0,3) is 0.  
 
 2)
