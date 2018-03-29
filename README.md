@@ -27,10 +27,12 @@ Program and explanation is in the back end folder.
 # BONUS.
 A player vs A.I. Game  
 
-Program and explanation is in the Player vs AI Folder.
+Program and explanation is in the Bonus Player vs AI Folder.
 
-Hope to hear back from you soon,
+#
+Hope to hear back from you soon.
 
+Signing out,  
 Shubham Aggarwal
 
 
