@@ -12,6 +12,12 @@ import javax.crypto.*;
 import javax.crypto.spec.PBEKeySpec;
 import javax.crypto.spec.PBEParameterSpec;
 
+/**
+ * Class dealing with encryption & decryption.
+ * Although this step is optional, I felt it would be a nice add-on for the service.
+ * @author Shubham Aggarwal
+ *
+ */
 public class CryptoUtil 
 {
 
@@ -53,9 +59,13 @@ public class CryptoUtil
             UnsupportedEncodingException,
             IllegalBlockSizeException,
             BadPaddingException {
-        //Key generation for enc and desc
-        KeySpec keySpec = new PBEKeySpec(secretKey.toCharArray(), salt, iterationCount);
-        SecretKey key = SecretKeyFactory.getInstance("PBEWithMD5AndDES").generateSecret(keySpec);
+        /*
+         * Key generation for enc and desc using PBEWithMD5AndDES.
+         */
+        
+        //Constructor that takes a password, salt, iteration count for generating PBEKey of fixed-key-size PBE ciphers.
+        KeySpec keySpec = new PBEKeySpec(secretKey.toCharArray(), salt, iterationCount); 
+        SecretKey key = SecretKeyFactory.getInstance("PBEWithMD5AndDES").generateSecret(keySpec); //Encrypts Decrypted data and vice versa.
         // Prepare the parameter to the ciphers
         AlgorithmParameterSpec paramSpec = new PBEParameterSpec(salt, iterationCount);
 
