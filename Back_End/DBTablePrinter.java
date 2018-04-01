@@ -15,15 +15,8 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-/*
-This is my first Java program that does something more or less
-useful. It is part of my effort to learn Java, how to use
-an IDE (IntelliJ IDEA 13.1.15 in this case), how to apply an
-open source license and how to use Git and GitHub (https://github.com)
-for version control and publishing an open source software.
-Hami
- */
 
+// <------------- OWNER Hami @ https://github.com/htorun/dbtableprinter ------------------>
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -34,8 +27,6 @@ import java.util.StringJoiner;
  * Just a utility to print rows from a given DB table or a
  * <code>ResultSet</code> to standard out, formatted to look
  * like a table with rows and columns with borders.
- *
- * Credit : Hami @ https://github.com/htorun/dbtableprinter.
  */
 public class DBTablePrinter {
 
