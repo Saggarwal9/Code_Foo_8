@@ -4,6 +4,7 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -15,9 +16,17 @@ import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 import org.w3c.dom.Element;
 
+/**
+ * Program that XML parses the IGN API and stores in a MySQL database through JDBC.
+ * XML Parsed through DOM.
+ * Added a basic interactive service targeted at the Non-Technologically Profound IGN's Audience.
+ * Explanation of this service in the Repository's Readme.md
+ * @author Shubham Aggarwal
+ *
+ */
 public class Parse {
     /*
-     * Sample Request format.
+     * Sample Request format. The User can append his page number choice.
      */
     private static String sampleRequest = "https://ign-apis.herokuapp.com/content/feed.rss?page=";
 
@@ -75,6 +84,11 @@ public class Parse {
         return stream;
     }
 
+    /**
+     * Retrieves the XML and parses it.
+     * @param sampleRequest contains the request page from which the XML is inputed.
+     * @return ArrayList of all the data from the sampleRequest page.
+     */
     public static ArrayList<Data> retrieveData(String sampleRequest){
         ArrayList<Data> dataSet=new ArrayList<Data>();
         DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
@@ -86,7 +100,7 @@ public class Parse {
         }
         Document doc = null;
         try {
-            doc=dBuilder.parse(getRequest(sampleRequest));
+            doc=dBuilder.parse(getRequest(sampleRequest)); //Builds a sample document of the XML in the sampleRequest link.
         } catch (SAXException e) {
             e.printStackTrace();
         } catch (IOException e) {
@@ -99,6 +113,9 @@ public class Parse {
         for(int i=0;i<itemsList.getLength();i++) {
             Data data=new Data();
             Element item= (Element)itemsList.item(i); //Retrieves the i-th item from the itemsList and casts to Element.
+            /**
+             * DATA ASSIGNMENT.
+             */
             data.setGuid(item.getElementsByTagName(ITEM_GUID).item(BASE_DATA).getTextContent());
             data.setCategory(item.getElementsByTagName(ITEM_CATEGORY).item(BASE_DATA).getTextContent());
             data.setTitle(item.getElementsByTagName(ITEM_TITLE).item(BASE_DATA).getTextContent());
@@ -112,72 +129,95 @@ public class Parse {
             data.setIgn_thumbnail_compact(((Element) item.getElementsByTagName(ITEM_THUMBNAIL).item(INDEX_COMPACT)).getAttribute(ATTRIBUTE_LINK));
             data.setIgn_thumbnail_medium(((Element) item.getElementsByTagName(ITEM_THUMBNAIL).item(INDEX_MEDIUM)).getAttribute(ATTRIBUTE_LINK));
             data.setIgn_thumbnail_large(((Element) item.getElementsByTagName(ITEM_THUMBNAIL).item(INDEX_LARGE)).getAttribute(ATTRIBUTE_LINK));
-            dataSet.add(data);
+            dataSet.add(data); //That's a lot of data. Add it to our final list. 
         }
 
         return dataSet;
     }
 
-
+    /*
+     * Initiates the service. Requires the User to Log in using its MySQL Credentials. 
+     * The credentials are encrypted and stored in a file. 
+     */
     public static void main(String[] args) {
-
         System.out.println("Welcome to IGN Articles and Video Databases");
         System.out.println("MySQL 5.6 Log-In required.");
         Scanner scanner=new Scanner(System.in);
         ArrayList<Data> dataSet=null;
-        String choice;
-        String choice2;
+        String choice=""; //First choice of Article/Video.
+        String choice2; //Second choice of Full Database or the particular page.
         int pg;
         Database d1=new Database();
         UI ui=new UI();
         if(ui.input(d1)) {
-            System.out.println("Log in successful");
+            System.out.println("Log in successful"); //Correct Credentials entered. 
             do {
                 System.out.println("What would you like to view? (enter article or video or exit).");
-                choice=scanner.nextLine();
+                try {
+                    choice=scanner.nextLine();
+                }catch(InputMismatchException e) {
+                    System.out.println("Invalid Choice. Try again");
+                    continue;
+                }
                 if(!choice.equals("article") && !choice.equals("video") && !choice.equals("exit")) {
                     System.out.println("Invalid entry");
                     continue;
                 }
                 if(choice.toLowerCase().equals("exit"))
                     break;
-                System.out.println("Select a page number.");
-                pg=scanner.nextInt();
-                scanner.nextLine(); //Scanner's weird behavior.
-                dataSet = retrieveData(sampleRequest+Integer.toString(pg));
-                for(Data data:dataSet) {
-                    d1.insertData(data);
-                }
-                System.out.println("Would you like to view the " + choice + " in the entire database(E) or the particular page(P) or go back(B).");
-                choice2=scanner.nextLine();
                 do {
-                    if(choice2.toLowerCase().equals("e")) {
-                        d1.printData(choice);
-                        break;
+                    System.out.println("Select a page number. ( 1 - 20 )");
+                    try {
+                        pg=scanner.nextInt();
+                        if(pg>0 && pg <=20)
+                            break;
+                        else {
+                            System.out.println("Invalid entry");
+                            continue;
+                        }
+                    }catch(InputMismatchException e) {
+                        System.out.println("Invalid entry");
+                        scanner.nextLine();
+                        continue;
                     }
-                    else if(choice2.toLowerCase().equals("p")){
-                        d1.printPage(choice,dataSet);
-                        break;
-                    }
-                    else if(choice2.toLowerCase().equals("b")) {
-                        System.out.println("Going back");
-                        break;
-                    }
-                    else {
+                }while(true);
+                scanner.nextLine(); //Scanner's weird behavior.
+                dataSet = retrieveData(sampleRequest+Integer.toString(pg)); //Appended the page number.
+                for(Data data:dataSet) {
+                    d1.insertData(data); //Inserting the data in our overall database.
+                }
+                //Asks the user whether it would prefer to view the whole database or the page mentioned.
+                do {
+                    System.out.println("Would you like to view the " + choice + " in the entire database(E) or the particular page(P) or go back(B).");
+                    try {
+                        choice2=scanner.nextLine();
+                        if(choice2.toLowerCase().equals("e")) { //Entire Article / Category Database
+                            d1.printData(choice);
+                            break;
+                        }
+                        else if(choice2.toLowerCase().equals("p")){ //The Article / Category at the particular page.
+                            d1.printPage(choice,dataSet);
+                            break;
+                        }
+                        else if(choice2.toLowerCase().equals("b")) { //Go back.
+                            System.out.println("Going back");
+                            break;
+                        }
+                        else {
+                            System.out.println("Invalid Choice. Try again");
+                            continue;
+                        }
+                    }catch(InputMismatchException e) { //If user 'accidentally' enters a wrong type of input.
                         System.out.println("Invalid Choice. Try again");
                         continue;
                     }
+
                 }while(true);
                 dataSet.clear();
 
             }while(!choice.toLowerCase().equals("exit"));
         }
-
-
         d1.close();
-        scanner.close();
-
-
     }
 
 }
