@@ -4,6 +4,7 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -18,10 +19,10 @@ public class Parse {
     /*
      * Sample Request format.
      */
-    private static String sampleRequest = "https://ign-apis.herokuapp.com/content/feed.rss?page=1";
-    
+    private static String sampleRequest = "https://ign-apis.herokuapp.com/content/feed.rss?page=";
+
     private static HttpURLConnection connection=null; //Performs basic HTTP operations without needing any additional libraries.
-    
+
     /**
      * Static variables for XML Parsing.
      * If the XML API tags names are changed later, 
@@ -53,14 +54,14 @@ public class Parse {
         URL url = null;
         //HttpURLConnection connection = null; 
         InputStream stream=null;
-        
+
         try {
             url=new URL(link);
         }catch(MalformedURLException e) {
             System.out.println("Invalid Link.");
             e.printStackTrace();
         }
-        
+
         try {
             connection=(HttpURLConnection) url.openConnection(); //openConnection returns Connection object. Cast to HttpUrlConnection required.
             connection.setRequestMethod("GET"); //Get type request.
@@ -73,7 +74,7 @@ public class Parse {
         }
         return stream;
     }
-    
+
     public static ArrayList<Data> retrieveData(String sampleRequest){
         ArrayList<Data> dataSet=new ArrayList<Data>();
         DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
@@ -93,7 +94,7 @@ public class Parse {
         }
         connection.disconnect();
         doc.getDocumentElement().normalize();//The normalize() method removes empty Text nodes, and joins adjacent Text nodes.
-        
+
         NodeList itemsList = doc.getDocumentElement().getElementsByTagName("item"); //NodeList of data under every <item> created.
         for(int i=0;i<itemsList.getLength();i++) {
             Data data=new Data();
@@ -113,28 +114,70 @@ public class Parse {
             data.setIgn_thumbnail_large(((Element) item.getElementsByTagName(ITEM_THUMBNAIL).item(INDEX_LARGE)).getAttribute(ATTRIBUTE_LINK));
             dataSet.add(data);
         }
-        
+
         return dataSet;
     }
-    
-    
+
+
     public static void main(String[] args) {
-        
-        ArrayList<Data> dataSet = retrieveData(sampleRequest);
-//        for(Data data:dataSet) {
-//            System.out.println(data.getIgn_thumbnail_compact());
-//        }
-      
+
+        System.out.println("Welcome to IGN Articles and Video Databases");
+        System.out.println("MySQL 5.6 Log-In required.");
+        Scanner scanner=new Scanner(System.in);
+        ArrayList<Data> dataSet=null;
+        String choice;
+        String choice2;
+        int pg;
         Database d1=new Database();
         UI ui=new UI();
         if(ui.input(d1)) {
-        for(Data data:dataSet) {
-            d1.insertData(data);
+            System.out.println("Log in successful");
+            do {
+                System.out.println("What would you like to view? (enter article or video or exit).");
+                choice=scanner.nextLine();
+                if(!choice.equals("article") && !choice.equals("video") && !choice.equals("exit")) {
+                    System.out.println("Invalid entry");
+                    continue;
+                }
+                if(choice.toLowerCase().equals("exit"))
+                    break;
+                System.out.println("Select a page number.");
+                pg=scanner.nextInt();
+                scanner.nextLine(); //Scanner's weird behavior.
+                dataSet = retrieveData(sampleRequest+Integer.toString(pg));
+                for(Data data:dataSet) {
+                    d1.insertData(data);
+                }
+                System.out.println("Would you like to view the " + choice + " in the entire database(E) or the particular page(P) or go back(B).");
+                choice2=scanner.nextLine();
+                do {
+                    if(choice2.toLowerCase().equals("e")) {
+                        d1.printData(choice);
+                        break;
+                    }
+                    else if(choice2.toLowerCase().equals("p")){
+                        d1.printPage(choice,dataSet);
+                        break;
+                    }
+                    else if(choice2.toLowerCase().equals("b")) {
+                        System.out.println("Going back");
+                        break;
+                    }
+                    else {
+                        System.out.println("Invalid Choice. Try again");
+                        continue;
+                    }
+                }while(true);
+                dataSet.clear();
+
+            }while(!choice.toLowerCase().equals("exit"));
         }
-        d1.printData();
+
+
         d1.close();
-        }
- 
+        scanner.close();
+
+
     }
 
 }
