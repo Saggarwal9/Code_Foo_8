@@ -1,4 +1,8 @@
-
+/**
+ * Contains all the data under the <item> tag in IGN's RSS Feed.
+ * @author Shubham Aggarwal
+ *
+ */
 public class Data {
     String guid="";
     String category="";
@@ -14,8 +18,13 @@ public class Data {
     String ign_thumbnail_medium="";
     String ign_thumbnail_large="";
 
+    /**
+     * SQL requires the Meta Characters to be prepended by '\'
+     * @param inputString is the string that possibly has meta characters.
+     * @return the string with all the meta characters prepended by \.
+     */
     private String escapeMetaCharacters(String inputString){
-        final String[] metaCharacters = {"\\","^","$","{","}","[","]","(",")",".","*","+","?","|","<",">","-","&","'",","};
+        final String[] metaCharacters = {"\\","^","$","{","}","[","]","(",")",".","*","+","?","|","<",">","-","&","'",",","\"",";",":"};
         String outputString="";
         for (int i = 0 ; i < metaCharacters.length ; i++){
             if(inputString.contains(metaCharacters[i])){
@@ -33,7 +42,7 @@ public class Data {
         this.guid = guid;
     }
     public String getCategory() {
-        return escapeMetaCharacters(category);
+        return category;
     }
     public void setCategory(String category) {
         this.category = category;
