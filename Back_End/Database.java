@@ -229,7 +229,9 @@ public class Database {
                 // DBTablePrinter.printTable(conn, ARTICLE_TABLE_NAME, MAX_ROWS); //print only
                 // article front-end
                 else { // print the complete article table. (Front end + back end)
-                    ResultSet results = statement.executeQuery("SELECT * FROM " + ARTICLE_TABLE_NAME
+                    ResultSet results = statement.executeQuery("SELECT " + ARTICLE_TABLE_NAME + ".ID, GUID, Title, Description, Date, "
+                            + "Link, Slug,Network, State, Tags,Thumbnail_compact, Thumbnail_medium, Thumbnail_large "
+                            + "FROM " + ARTICLE_TABLE_NAME
                             + " INNER JOIN " + BACK_END_TABLE_NAME + " on " + ARTICLE_TABLE_NAME
                             + ".id_backend = "
                             + BACK_END_TABLE_NAME + ".ID ORDER BY " + ARTICLE_TABLE_NAME + ".ID");
@@ -266,7 +268,8 @@ public class Database {
                             + " ORDER BY ID");
                     DBTablePrinter.printResultSet(results, MAX_ROWS);
                 } else { // print the complete video table. (Front end + back end)
-                    ResultSet results = statement.executeQuery("SELECT * FROM " + VIDEO_TABLE_NAME
+                    ResultSet results = statement.executeQuery("SELECT " + VIDEO_TABLE_NAME + ".ID, GUID, Title, Description, Date," + 
+                            "Link, Slug,Network, State, Tags,Thumbnail_compact, Thumbnail_medium, Thumbnail_large FROM " + VIDEO_TABLE_NAME
                             + " INNER JOIN " + BACK_END_TABLE_NAME + " on " + VIDEO_TABLE_NAME
                             + ".id_backend = "
                             + BACK_END_TABLE_NAME + ".ID ORDER BY " + VIDEO_TABLE_NAME + ".ID");
@@ -371,7 +374,9 @@ public class Database {
                     } else if (choice2.toLowerCase().equals("yes")) { // print after joining
                                                                       // front-end
                                                                       // and back-end.
-                        ResultSet result = statement.executeQuery("Select * From " + PAGE_TABLE
+                        ResultSet result = statement.executeQuery("Select " + PAGE_TABLE + ".id, GUID, Title, Description, "
+                                + "Date,Link,Slug,Network,State,Tags,Thumbnail_compact,"
+                                + "Thumbnail_medium, Thumbnail_large From " + PAGE_TABLE
                                 + " inner join " + PAGE_BACK_END_TABLE
                                 + " on " + PAGE_TABLE + ".Backend_ID =" + PAGE_BACK_END_TABLE
                                 + ".ID");
