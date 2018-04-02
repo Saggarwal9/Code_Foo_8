@@ -79,7 +79,7 @@ As a general user based service, I felt that there would be no use displaying Sl
 Making GUID primary key was essential in preventing duplicate data. 
 
 # Program structure
-1) **Parse.java** contains the main method. This class is responsible for retrieving username/password,encrypting and storing it on the file. This class is also responsible for **GET** connection the sample request of the RSS feed and **DOM** parsing it. The data is stored in an **ArraryList** of data object. Parse is also responsible for taking the user's preference for printing data.
+1) **Parse.java** contains the main method. This class is responsible for retrieving username/password,encrypting and storing it on the file. This class is also responsible for **GET** connection to the sample request of the RSS feed and **DOM** parsing it. The data is stored in an **ArraryList** of data object. Parse is also responsible for taking the user's preference for printing data.
 
 2) **Data.java** contains all possible data variables that can be retrieved from parsing the RSS feed.  
 
@@ -87,7 +87,7 @@ Making GUID primary key was essential in preventing duplicate data.
 
 4) **DBTablePrinter.java** contains the methods to print the database. The owner(Hami) has allowed free distribution of this code. For more information, check out the github page for DBTablePrinter: https://github.com/htorun/dbtableprinter.  
 
-5) **UI.java** contains the methods that checks whether the given username and password is correct. If it is correct, then it creates a file(if it doesn't exist) and using the encrypt function, stores the encrypted username and password to a textfile called **Credentials.txt"**.
+5) **UI.java** contains the methods that check whether the given username and password is correct. If it is correct, then it creates a file(if it doesn't exist) and using the encrypt function, stores the encrypted username and password to a textfile called **Credentials.txt"**.
 
 6) **Database.java** contains all the database related functions like opening the database, creating tables, inserting data, calling DBTablePrinter methods for the given query, dropping tables and closing the database. It also has a printPage method responsible for printing page specific data (and not the entire table).  
 
