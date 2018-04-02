@@ -18,7 +18,7 @@ To compile on terminal: javac -cp .;my-sql-connector-java-5.1.46.jar;my-sql-conn
 To execute on terminal: java -cp .;my-sql-connector-java-5.1.46.jar;my-sql-connector-java-5.1.46-bin.jar;okhttp-3.10.0.jar Parse  
 
 **Linux**  
-I don't have a linux machine, but on searching online, we have to compile using : instead of ; in the above prompts.  
+I don't have a linux machine, but on searching online, one can compile using : instead of ; in the above prompts.  For instance, javac -cp .\:my-sql-connector-java-5.1.46.jar\:my-sql-connector-java-5.1.46-bin.jar\:okhttp-3.10.0.jar \*.java
 
 # Requirements (IMPORTANT)  
 Requires a one-time log-in to your MySQL service. The program (Weakly) encrypts the password and stores it in a "Credentials.txt" file, which is later used for auto log-in if the progam is executed again.  
