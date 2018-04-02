@@ -76,27 +76,27 @@ On an IDE, can be compiled directly by building and executing chicken.java.
 To compile on a shell, navigate to the base folder. Compile using 'javac \*.java' without quotes, followed by java chicken.   
 To change the grid-size, alter the MAX_Y_WIDTH (Length of the Grid) or MAX_X_WIDTH (Width of the Grid) in the Road class.  
     
-# Sample outputs: (* Marks the starting Coordinates)
+# Sample outputs: (Bold -> Starting Point)
 
 1) 
    O X X O  
    X X O O  
    O O X X  
-   O* X X X  
+   **O** X X X  
 Answer: Total valid paths from starting point (0,3) is 0.  
 
 2)
    O O X X  
    O X O O  
    X X O X  
-   O* O O X
+   **O** O O X
 1. (0, 3)->(1, 3)->(2, 3)->(2, 2)->(2, 1)->(3, 1).  
 Answer: Total valid paths from starting point (0,3) is 1.  
 
 3)
    X O X O   
    O O O O  
-   O* O O O  
+   **O** O O O  
    O O O O
 1. (0, 2)->(1, 2)->(2, 2)->(3, 2).  
 2. (0, 2)->(1, 2)->(2, 2)->(2, 1)->(3, 1).  
@@ -130,7 +130,7 @@ Answer: Total valid paths from starting point (0,2) is 27.
 4)
    O X O X  
    X X X X  
-   O* O O O  
+   **O** O O O  
    O O O O
 1. (0, 2)->(1, 2)->(2, 2)->(3, 2). 
 2. (0, 2)->(1, 2)->(2, 2)->(2, 3)->(3, 3). 
@@ -144,7 +144,7 @@ Answer: Total valid paths from starting point (0,2) is 8.
     
 5)
    O O O O  
-   O* X O O  
+   **O** X O O  
    X O O X  
    O O O O
 1. (0, 1)->(0, 0)->(1, 0)->(2, 0)->(3, 0).  
