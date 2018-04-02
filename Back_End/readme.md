@@ -45,7 +45,7 @@ a)
 I assumed that these group of people wouldn't want to look at the old articles/videos that they've already explored earlier again. Instead of asking them to explicitly clear the database, I've made it an intrinsic feature.   
 
 b)  
-I assumed that these group of people wouldn't know their way about using MySQL. By dropping the table, I'm preventing the space usage which they may not be able to delete, if they are aware of it in the first place.  
+I assumed that these group of people wouldn't know their way about using MySQL. By dropping the table, I'm preventing the space usage which they may not be able to delete, if they are aware that the table exists on the hard disc in the first place.  
 
 *(My Operating System professor used to say, there are two type of software engineers: The smart one sells their bug in their softwares as features, others don't.)*
 
