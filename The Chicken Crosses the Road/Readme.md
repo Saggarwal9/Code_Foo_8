@@ -82,8 +82,8 @@ To change the grid-size, alter the MAX_Y_WIDTH (Length of the Grid) or MAX_X_WID
    O X X O  
    X X O O  
    O O X X  
-   **O** X X X  
-Answer: Total valid paths from starting point (0,3) is 0.  
+  **O** X X X  
+**Answer: Total valid paths from starting point (0,3) is 0.**  
 
 2)
    O O X X  
@@ -91,7 +91,7 @@ Answer: Total valid paths from starting point (0,3) is 0.
    X X O X  
    **O** O O X
 1. (0, 3)->(1, 3)->(2, 3)->(2, 2)->(2, 1)->(3, 1).  
-Answer: Total valid paths from starting point (0,3) is 1.  
+**Answer: Total valid paths from starting point (0,3) is 1.**  
 
 3)
    X O X O   
@@ -125,7 +125,7 @@ Answer: Total valid paths from starting point (0,3) is 1.
 25. (0, 2)->(0, 3)->(1, 3)->(1, 2)->(1, 1)->(2, 1)->(3, 1).  
 26. (0, 2)->(0, 3)->(1, 3)->(1, 2)->(1, 1)->(2, 1)->(2, 2)->(3, 2).  
 27. (0, 2)->(0, 3)->(1, 3)->(1, 2)->(1, 1)->(2, 1)->(2, 2)->(2, 3)->(3, 3).  
-Answer: Total valid paths from starting point (0,2) is 27.  
+**Answer: Total valid paths from starting point (0,2) is 27.**  
 
 4)
    O X O X  
@@ -140,16 +140,16 @@ Answer: Total valid paths from starting point (0,2) is 27.
 6. (0, 2)->(0, 3)->(1, 3)->(2, 3)->(2, 2)->(3, 2). 
 7. (0, 2)->(0, 3)->(1, 3)->(1, 2)->(2, 2)->(3, 2). 
 8. (0, 2)->(0, 3)->(1, 3)->(1, 2)->(2, 2)->(2, 3)->(3, 3).   
-Answer: Total valid paths from starting point (0,2) is 8. 
+**Answer: Total valid paths from starting point (0,2) is 8.** 
     
 5)
    O O O O  
-   **O** X O O  
+  **O** X O O  
    X O O X  
    O O O O
 1. (0, 1)->(0, 0)->(1, 0)->(2, 0)->(3, 0).  
 2. (0, 1)->(0, 0)->(1, 0)->(2, 0)->(2, 1)->(3, 1).  
 3. (0, 1)->(0, 0)->(1, 0)->(2, 0)->(2, 1)->(2, 2)->(2, 3)->(3, 3).  
-Answer: Total valid paths from starting point (0,1) is 3.  
+**Answer: Total valid paths from starting point (0,1) is 3.**  
 
 ----------------------------------------------------------------------------------------------------------------------------------
