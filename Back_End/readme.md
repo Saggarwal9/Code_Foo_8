@@ -51,6 +51,32 @@ I assumed that these group of people wouldn't know their way about using MySQL. 
 
 **POSSIBLE FUTURE ADDON** I wanted to add a bookmark list, that contains all the link that user might want to view later. (Just like Youtube's watch later feature). If I am done with all the other parts well before time, I'll try to implement this feature.
 
+
+# Normalization 
+I've decomposed the entire data into three structures, mainly :  
+A) Front-End Articles  
+B) Front-End Videos  
+C) Back-End
+
+**Both the front-end tables contains the following columns:**
+ID, GUID(Primary Key), Title, Description, Date, Link, ID_Backend.  
+The ID is an extra column added to make it easy for users to open the link.  
+ID_backend is the foreign key to connect to the back-end table.
+
+**The back-end table contains the following columns:**
+ID(Primary key), Slug, Network, State, Tags, Thumbnail Compact, Thumbnail Medium, Thumbnail Large.  
+I wanted to eliminate state and network columns, since most of it is redundant data (IGN || Published). However, I kept those rows *hoping for an **edge case** where IGN decides to trick us and actually posts something else other than IGN and 'Published' under their columns. However being a RSS feed, will IGN ever do that? Find out in the next episode of IGN Ball z.*  
+
+**Why did I split articles and categories into two seperate tables?**  
+1) I felt it would be a good decision to eliminate the category column and rather present with the user of what explicitly they'll like to view. This was a personal choice as I prefer articles over videos and other people like me might prefer to have this option. *Sorry IGN Video makers, I love them articles.*  
+2) Most of the video links leads to an IGN 404 page.
+
+**Why do I have a separate back-end table?**
+As a general user based service, I felt that there would be no use displaying Slug, Tags etc. details to the user, as they're mostly concerned with the title, description and link. If, however the user is interested in the back-end details, he can ask the application and the program will inner join the two tables.
+
+**Why do I have GUID when I have already have an ID?**
+Making GUID primary key was essential in preventing duplicate data. 
+
 # Program structure
 
 
@@ -66,7 +92,4 @@ D) I admit that I didn't follow a systematic approach while building the service
 E) Like I mentioned above, I would like to add a Bookmark system. 
 
 F) The DBTablePrinter used works perfectly most of the times, however, in cases where the command prompt dimensions are small or the total table rows are less than 10, the table doesn't print as expected. 
-
-# Sample Outputs
-
 
