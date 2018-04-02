@@ -35,7 +35,7 @@ Answer: Total valid paths from starting point (0, 3) is 4
 Explain how you implemented the solution. Does your solution work with larger grids?
 -------------------------------------------------------------------------------------------------------------------------------------
 
-Answer: Yes, it works with larger grid.  
+# Answer: Yes, it works with larger grid.  
 
 Approach: 
 
