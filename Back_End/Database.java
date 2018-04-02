@@ -188,8 +188,11 @@ public class Database {
             statement=conn.createStatement();
             switch(choice) {
             case "article":
-                if(choice2.equals("no"))
-                    DBTablePrinter.printTable(conn, ARTICLE_TABLE_NAME, MAX_ROWS); //print only article front-end
+                if(choice2.equals("no")) {
+                    ResultSet results= statement.executeQuery("SELECT * FROM " + ARTICLE_TABLE_NAME + " ORDER BY ID");
+                    DBTablePrinter.printResultSet(results,MAX_ROWS);
+                }
+                //DBTablePrinter.printTable(conn, ARTICLE_TABLE_NAME, MAX_ROWS); //print only article front-end
                 else { //print the complete article table. (Front end + back end)
                     ResultSet results = statement.executeQuery("SELECT * FROM " + ARTICLE_TABLE_NAME
                             + " INNER JOIN " + BACK_END_TABLE_NAME + " on " + ARTICLE_TABLE_NAME + ".id_backend = "
@@ -220,8 +223,10 @@ public class Database {
                 }while(true);
                 break;
             case "video":
-                if(choice2.toLowerCase().equals("yes"))
-                    DBTablePrinter.printTable(conn, VIDEO_TABLE_NAME, MAX_ROWS); //print only video front-end table.
+                if(choice2.toLowerCase().equals("no")) { //prints only front end video table.
+                    ResultSet results= statement.executeQuery("SELECT * FROM " + VIDEO_TABLE_NAME + " ORDER BY ID");
+                    DBTablePrinter.printResultSet(results,MAX_ROWS);
+                }
                 else { //print the complete video table. (Front end + back end)
                     ResultSet results = statement.executeQuery("SELECT * FROM " + VIDEO_TABLE_NAME
                             + " INNER JOIN " + BACK_END_TABLE_NAME + " on " + VIDEO_TABLE_NAME + ".id_backend = "
@@ -307,7 +312,8 @@ public class Database {
                 try {
                     String choice2 = scanner.nextLine();
                     if(choice2.toLowerCase().equals("no")) {
-                        DBTablePrinter.printTable(conn, PAGE_TABLE); //print front-end table.
+                        ResultSet results= statement.executeQuery("SELECT * FROM " + PAGE_TABLE);
+                        DBTablePrinter.printResultSet(results);
                         break;
                     }
                     else if(choice2.toLowerCase().equals("yes")) { //print after joining front-end and back-end.
