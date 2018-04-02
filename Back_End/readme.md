@@ -51,7 +51,8 @@ I assumed that these group of people wouldn't know their way about using MySQL. 
 
 **POSSIBLE FUTURE ADDON** I wanted to add a bookmark list, that contains all the link that user might want to view later. (Just like Youtube's watch later feature). If I am done with all the other parts well before time, I'll try to implement this feature.
 
-# Explanation
+# Program structure
+
 
 # Future Features, changes I would implement  
 A) I would like to completely remove the MySQL Log-in dependancy in the start. I tried searching for methods online, but due to my limited knowledge and time, I couldn't implement this.  
@@ -65,4 +66,7 @@ D) I admit that I didn't follow a systematic approach while building the service
 E) Like I mentioned above, I would like to add a Bookmark system. 
 
 F) The DBTablePrinter used works perfectly most of the times, however, in cases where the command prompt dimensions are small or the total table rows are less than 10, the table doesn't print as expected. 
+
+# Sample Outputs
+
 
