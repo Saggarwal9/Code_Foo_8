@@ -65,16 +65,17 @@ ID_backend is the foreign key to connect to the back-end table.
 
 **The back-end table contains the following columns:**
 ID(Primary key), Slug, Network, State, Tags, Thumbnail Compact, Thumbnail Medium, Thumbnail Large.  
+
 I wanted to eliminate state and network columns, since most of it is redundant data (IGN || Published). However, I kept those rows *hoping for an **edge case** where IGN decides to trick us and actually posts something else other than IGN and 'Published' under their columns. However being a RSS feed, will IGN ever do that? Find out in the next episode of IGN Ball z.*  
 
 **Why did I split articles and categories into two seperate tables?**  
 1) I felt it would be a good decision to eliminate the category column and rather present with the user of what explicitly they'll like to view. This was a personal choice as I prefer articles over videos and other people like me might prefer to have this option. *Sorry IGN Video makers, I love them articles.*  
 2) Most of the video links leads to an IGN 404 page.
 
-**Why do I have a separate back-end table?**
+**Why do I have a separate back-end table?**  
 As a general user based service, I felt that there would be no use displaying Slug, Tags etc. details to the user, as they're mostly concerned with the title, description and link. If, however the user is interested in the back-end details, the program will cater to his needs and provide him a front-end and back-end combined table by inner joining.
 
-**Why do I have GUID when I have already have an ID?**
+**Why do I have GUID when I have already have an ID?**  
 Making GUID primary key was essential in preventing duplicate data. 
 
 # Program structure
