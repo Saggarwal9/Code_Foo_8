@@ -232,7 +232,7 @@ public class Database {
                     ResultSet results = statement.executeQuery("SELECT * FROM " + ARTICLE_TABLE_NAME
                             + " INNER JOIN " + BACK_END_TABLE_NAME + " on " + ARTICLE_TABLE_NAME
                             + ".id_backend = "
-                            + BACK_END_TABLE_NAME + ".ID");
+                            + BACK_END_TABLE_NAME + ".ID ORDER BY " + ARTICLE_TABLE_NAME + ".ID");
                     DBTablePrinter.printResultSet(results, MAX_ROWS);
 
                 }
@@ -269,7 +269,7 @@ public class Database {
                     ResultSet results = statement.executeQuery("SELECT * FROM " + VIDEO_TABLE_NAME
                             + " INNER JOIN " + BACK_END_TABLE_NAME + " on " + VIDEO_TABLE_NAME
                             + ".id_backend = "
-                            + BACK_END_TABLE_NAME + ".ID");
+                            + BACK_END_TABLE_NAME + ".ID ORDER BY " + VIDEO_TABLE_NAME + ".ID");
                     DBTablePrinter.printResultSet(results, MAX_ROWS);
 
                 }
