@@ -23,7 +23,7 @@ I don't have a linux machine, but on searching online, we have to compile using 
 # Requirements (IMPORTANT)  
 Requires a one-time log-in to your MySQL service. The program (Weakly) encrypts the password and stores it in a "Credentials.txt" file, which is later used for auto log-in if the progam is executed again.  
 
-**Other than that, for the service to output correctly on command prompt, please disable "text wrapping" on your command prompt and increase width size to minimum 1000.**   
+**Other than that, for the service to output correctly on command prompt, please disable "text wrapping" on your command prompt and increase width size to minimum 5000.**   
 
 On windows, it can be done by right clicking the command prompt window titlebar --> properties-->Layout-->Untick wrap text and increase width size.  
 
