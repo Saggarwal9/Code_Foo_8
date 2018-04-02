@@ -72,7 +72,7 @@ I wanted to eliminate state and network columns, since most of it is redundant d
 2) Most of the video links leads to an IGN 404 page.
 
 **Why do I have a separate back-end table?**
-As a general user based service, I felt that there would be no use displaying Slug, Tags etc. details to the user, as they're mostly concerned with the title, description and link. If, however the user is interested in the back-end details, he can ask the application and the program will inner join the two tables.
+As a general user based service, I felt that there would be no use displaying Slug, Tags etc. details to the user, as they're mostly concerned with the title, description and link. If, however the user is interested in the back-end details, the program will cater to his needs and provide him a front-end and back-end combined table by inner joining.
 
 **Why do I have GUID when I have already have an ID?**
 Making GUID primary key was essential in preventing duplicate data. 
