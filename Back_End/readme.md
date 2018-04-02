@@ -83,7 +83,7 @@ Making GUID primary key was essential in preventing duplicate data.
 
 2) **Data.java** contains all possible data variables that can be retrieved from parsing the RSS feed.  
 
-3) **CryptoUtils.java** contains the **encrypt()** and the **decrypt()** method used to encrypt/decrypt username and password inputted by the user. The class uses a 2-layer encryption using **PBEWithMD5AndDES Encryption**. This is an optional add-on. I felt it would go nicely with the theme. Possible improvement here would be to change from 2 layer encryption to 3 layer encryption.
+3) **CryptoUtils.java** contains the **encrypt()** and the **decrypt()** method used to encrypt/decrypt username and password inputted by the user. The class uses a 2-layer encryption using **PBEWithMD5AndDES Encryption**. This is an optional add-on service. I felt it would go nicely with the theme. Possible improvement here would be to change from 2 layer encryption to 3 layer encryption.
 
 4) **DBTablePrinter.java** contains the methods to print the database. The owner(Hami) has allowed free distribution of this code. For more information, check out the github page for DBTablePrinter: https://github.com/htorun/dbtableprinter.  
 
