@@ -12,7 +12,7 @@ Depth here means the extent to which the alpha-beta pruning recursives to predic
 You can compile on the command prompt using this command java Awari Humanplayer AI setup.txt \[maxDepth\] , where maxDepth is an integer.
 Recommended command:  
 a) java Awari AI AI setup.txt 15 (AI VS AI).  
-b) java awari HumanPlayer AI setup.txt 15 (Player vs AI)  
+b) java Awari HumanPlayer AI setup.txt 15 (Player vs AI)  
 
 **setup.txt** contains the initial board configuration. Can be changed to check how dynamic the AI is under different situations.
 
