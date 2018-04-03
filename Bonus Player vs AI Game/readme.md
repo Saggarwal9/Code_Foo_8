@@ -10,8 +10,10 @@ Depth here means the extent to which the alpha-beta pruning recursives to predic
 
 ## Compilation
 You can compile on the command prompt using this command java Awari Humanplayer AI setup.txt \[maxDepth\] , where maxDepth is an integer.
+
 Command to compile:  
-javac \*.java
+javac \*.java  
+
 Recommended commands to execute:  
 a) java Awari AI AI setup.txt 15 (AI VS AI).  
 b) java Awari HumanPlayer AI setup.txt 15 (Player vs AI)  
