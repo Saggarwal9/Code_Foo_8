@@ -6,7 +6,11 @@ b.
 Build a service to pull and store the content from the API in a MySQL 5.7.X database. Explain how are you storing, normalizing, and indexing the data.  
 
 c.  
-Bonus: Build a service you think would make sense that uses your database. Defend your proposals.  
+Bonus: Build a service you think would make sense that uses your database. Defend your proposals.
+
+-------------------------------------------------------------------------------------------------------------------------------------
+**Note:** This is a product of four days of self-studying of database concepts and JDBC. I feel I still have a high room of improvement as I'm still in the process of understanding all these concepts. I would like to assert that with more time and some guidance, I can improve this program significantly. 
+-------------------------------------------------------------------------------------------------------------------------------------
 
 # Compilation
 **Windows**  
@@ -26,10 +30,6 @@ Requires a one-time log-in to your MySQL service. The program (Weakly) encrypts 
 **Other than that, for the service to output correctly on command prompt, please disable "text wrapping" on your command prompt and increase width size to minimum 5000.**   
 
 On windows, it can be done by right clicking the command prompt window titlebar --> properties-->Layout-->Untick wrap text and increase width size.    
-
--------------------------------------------------------------------------------------------------------------------------------------
-**Note:** This is a product of four days of self-studying of database concepts and JDBC. I feel I still have a high room of improvement as I'm still in the process of understanding all these concepts. I would like to assert that with more time and some guidance, I can improve this program significantly. 
--------------------------------------------------------------------------------------------------------------------------------------
 
 # Explanation of the service
 I've built a service to cater to the non-technical part of IGN's audience, mainly the children and the early teenagers.  
