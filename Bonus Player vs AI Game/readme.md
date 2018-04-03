@@ -1,5 +1,7 @@
 # Oware Game Playing A.I.
 
+**This program was used for a Game Playing A.I. project in my college coursework. The assignment included the files that only allowed Player vs Player game. We were asked to implement the A.I. after studying the program.**
+
 ## Description
 Oware is an ashanti abstract strategy game among the Mancala family, played worldwide with slight variations as to the layout of the game, number of players and strategy of play (Wikipedia).  
 
