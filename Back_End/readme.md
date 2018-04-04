@@ -9,7 +9,7 @@ c.
 Bonus: Build a service you think would make sense that uses your database. Defend your proposals.
 
 -------------------------------------------------------------------------------------------------------------------------------------
-**Note:** This is a product of four days of self-studying of database concepts and JDBC. I feel I still have a high room of improvement as I'm still in the process of understanding all these concepts. I would like to assert that with more time and some guidance, I can improve this program significantly. 
+**Note:** This is a product of four days of self-studying of database concepts and JDBC. I feel I still have a high room of improvement as I'm still in the process of understanding all these concepts. I would like to assert that with more time and some guidance, I can improve this program significantly. Due to my academic commitment, I'm unable to further improve this program right now.
 -------------------------------------------------------------------------------------------------------------------------------------
 
 # Compilation
@@ -55,6 +55,12 @@ I assumed that these group of people wouldn't know their way about using MySQL. 
 
 **POSSIBLE FUTURE ADDON** I wanted to add a bookmark list, that contains all the link that user might want to view later. (Just like Youtube's watch later feature). If I am done with all the other parts well before time, I'll try to implement this feature.
 
+# Adding  
+I parse the XML data and add them all into an ArrayList<Data> type, where data consist of the variables required to store all the type of data in the feed.  (Possible improvement here is to remove the intermediate ArrayList and directly add the parsed data to the table.)
+  
+I then divide the data into two two tables - mainly ign_videos and ign_articles depending on their categories. 
+
+I have another table that holds the 'back-end data'. I've explained my design implementation in the **normalization section** of the documentation.
 
 # Normalization 
 I've decomposed the entire data into three structures, mainly :  
