@@ -35,7 +35,7 @@ Answer: Total valid paths from starting point (0, 3) is 4
 ## Explain how you implemented the solution. Does your solution work with larger grids?
 
  **Answer: Yes, it works with larger grid.**  
-
+ 
 Approach: 
 
 Solution is programmed in Java. There are three main classes: Location, Road, Chicken.
@@ -48,7 +48,7 @@ Solution is programmed in Java. There are three main classes: Location, Road, Ch
     Maximum Width and Height are constant variables. These variables can be re-assigned to generate a larger
     grid and the solution will still work.
     If there are no valid starting locations or goal locations, randomly generate new locations and re-assign it.
-    The state of the road is stored in a 2D char array(potholes[MAX_Y_WIDTH][MAX_X_WIDTH])
+    The state of the road is stored in a 2D char array(potholes\[MAX_Y_WIDTH]\[MAX_X_WIDTH])
     The road generated might not have a valid path to reach the goal. The starting position might also be 
     generated from which the goal might be unreachable.
     Road Format:  
