@@ -1,7 +1,8 @@
 # Code_Foo_8
 Welcome to my repository containing the responses to Code_Foo 8.
 
-Thank you for giving me an opportunity to apply. It has been really fun (and frustrating-- Thank you GEOMAGS -.- ) experience. I am personally happy with the quality of most of my submissions in light of managing it along with my academics.
+Thank you for giving me an opportunity to apply. It has been really fun (and frustrating-- Thank you GEOMAGS -.- ) experience.  
+I am personally happy with the quality of most of my submissions as I was able to manage it along with my academics.
 
 # 1  
 Introduce yourself, explain your passion for IGN, and tell us why we should pick you to participate in IGN's Code Foo program. This can be in the form of a simple text document or as a YouTube/Vimeo video. 
