@@ -17,8 +17,9 @@ Bonus: Build a service you think would make sense that uses your database. Defen
 The program uses no arguments. It uses 3 JAR Libraries: OKHTTP-3.10.0 , my-sql-connector-java-5.1.46, my-sql-connector-java-5.1.46-bin.  
 To compile in an IDE, include the jars in the build path and execute Parse.java (main class).  
 
-To compile on terminal: javac -cp .;my-sql-connector-java-5.1.46.jar;my-sql-connector-java-5.1.46-bin.jar;okhttp-3.10.0.jar \*.java 
-
+To compile on terminal: javac -cp .;first.jar;second.jar;third.jar \*.java  
+To execute: java -cp .;first.jar;second.jar;third.jar Parse  
+(First: my-sql-connector-java-5.1.46-bin.jar , second:my-sql-connector-java-5.1.46.jar , third: okhttp-3.10.0.jar)
 To execute on terminal: java -cp .;my-sql-connector-java-5.1.46.jar;my-sql-connector-java-5.1.46-bin.jar;okhttp-3.10.0.jar Parse  
 
 **Linux**  
