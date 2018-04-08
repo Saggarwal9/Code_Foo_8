@@ -18,7 +18,8 @@ javac \*.java
 
 Recommended commands to execute:  
 a) java Awari AI AI setup.txt 15 (AI VS AI).  
-b) java Awari HumanPlayer AI setup.txt 15 (Player vs AI)  
+b) java Awari HumanPlayer AI setup.txt 15 (Player vs AI).   
+c) java HumanPlayer HumanPlayer setup.txt 15 (Player vs Player).  
 
 **setup.txt** contains the initial board configuration. Can be changed to check how dynamic the AI is under different situations.
 
