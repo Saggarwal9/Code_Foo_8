@@ -16,5 +16,5 @@ I've never seen or interacted with GeoMags in my life, so it took quite a bit of
 I hope you enjoy reading this report, like I enjoyed drafting it.** 
 
 ### Final Solution:
-#### Geomag Rods: 10,095,223,820 rods
+#### Geomag Rods: 28,095,223,820 rods
 #### Geomag Magnetic balls/spheres: 11,238,892,610 balls
