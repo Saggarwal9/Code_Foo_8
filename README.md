@@ -1,7 +1,8 @@
 # Code_Foo_8
 Welcome to my repository containing the responses to Code_Foo 8.
 
-Thank you for giving me an opportunity to apply. It has been really fun (and frustrating-- Thank you GEOMAGS -.- ) experience.  
+Thank you for giving me an opportunity to apply. It has been really fun experience   
+(and frustrating-- Thank you GEOMAGS -.- ).   
 
 I am personally happy with the quality of most of my submissions and with the fact that I managed to balance both this application and my academics simultaneously. 
 
