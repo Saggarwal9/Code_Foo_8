@@ -19,8 +19,7 @@ To compile in an IDE, include the jars in the build path and execute Parse.java 
 
 To compile on terminal: javac -cp .;first.jar;second.jar;third.jar \*.java  
 To execute: java -cp .;first.jar;second.jar;third.jar Parse  
-(First: my-sql-connector-java-5.1.46-bin.jar , second:my-sql-connector-java-5.1.46.jar , third: okhttp-3.10.0.jar)
-To execute on terminal: java -cp .;my-sql-connector-java-5.1.46.jar;my-sql-connector-java-5.1.46-bin.jar;okhttp-3.10.0.jar Parse  
+(First: my-sql-connector-java-5.1.46-bin.jar , second:my-sql-connector-java-5.1.46.jar , third: okhttp-3.10.0.jar)  
 
 **Linux**  
 I don't have a linux machine, but on searching online, one can compile using : instead of ; in the above prompts.  For instance, javac -cp .\:my-sql-connector-java-5.1.46.jar\:my-sql-connector-java-5.1.46-bin.jar\:okhttp-3.10.0.jar \*.java
