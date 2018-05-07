@@ -1,4 +1,4 @@
-#Happy to confirm that my application of Code Foo went through, and I'll be joining IGN for the summer internship :).
+#### Happy to confirm that my application of Code Foo went through, and I'll be joining IGN for the summer internship :).
 
 # Code_Foo_8
 Welcome to my repository containing the responses to Code_Foo 8.
